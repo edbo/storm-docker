@@ -40,4 +40,7 @@ WORKDIR $DISTRO_NAME
 ENV PATH $PATH:/$DISTRO_NAME/bin
 
 COPY docker-entrypoint.sh /
+
+COPY log4j2.xml /$DISTRO_NAME/log4j2/cluster.xml
+COPY log4j2.xml /$DISTRO_NAME/log4j2/worker.xml
 ENTRYPOINT ["/docker-entrypoint.sh"]
